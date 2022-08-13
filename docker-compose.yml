@@ -2,17 +2,19 @@ version: '3.8'
 services:
   node-api:
     build:
-      context: ./
+      context: .
       dockerfile: dockerfile-node-api
     container_name: node-api
     tty: true
     restart: always
     environment:
+      - TZ: Asia/Tokyo
       - DEBUG=app:*
     ports:
       - '8080:8080'
     volumes:
-      - ./src:/app
+      - ./app:/app
+      - /app/node_modules # ホストマウントなしでdata volume化
     # 起動時のカレントフォルダを指定
     working_dir: /app
     # 起動後に実行するコマンドを指定
