@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  node-api:
+    build:
+      context: ./
+      dockerfile: dockerfile-node-api
+    container_name: node-api
+    tty: true
+    restart: always
+    environment:
+      - DEBUG=app:*
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./src:/app
+    # 起動時のカレントフォルダを指定
+    working_dir: /app
+    # 起動後に実行するコマンドを指定
+    command: npm start
+volumes:
+  node-api:
+    driver: local
