@@ -8,7 +8,7 @@ services:
     tty: true
     restart: always
     environment:
-      - TZ: Asia/Tokyo
+      - TZ:Asia/Tokyo
       - DEBUG=app:*
     ports:
       - '8080:8080'
