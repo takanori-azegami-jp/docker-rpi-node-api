@@ -1,4 +1,4 @@
-# docker-rpi-nodeApi
+# docker-rpi-node-api
 RaspberryPi(64bit)にDockerでExpress/NodeJSのAPIサーバを構築
 
 ## 環境
