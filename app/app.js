@@ -1,7 +1,7 @@
 'use strict';
 
 // Constants
-const PORT = 8080;
+const PORT = 3000;
 const HOST = '0.0.0.0';
 
 // ライブラリ読み込み
@@ -18,4 +18,4 @@ let router = require('./routes/v1/');
 app.use('/api/v1/', router);
 
 app.listen(PORT, HOST);
-console.log('listen on port ' + PORT );
+console.log('listen on port ' + PORT);

@@ -3,7 +3,7 @@ services:
   node-api:
     build:
       context: .
-      dockerfile: dockerfile-node-api
+      dockerfile: Dockerfile
     container_name: node-api
     tty: true
     restart: always
@@ -11,13 +11,11 @@ services:
       - TZ:Asia/Tokyo
       - DEBUG=app:*
     ports:
-      - '8080:8080'
+      - '3000:3000'
     volumes:
+      # バインドマウント
       - ./app:/app
     # 起動時のカレントフォルダを指定
     working_dir: /app
     # 起動後に実行するコマンドを指定
     command: npm start
-volumes:
-  node-api:
-    driver: local
