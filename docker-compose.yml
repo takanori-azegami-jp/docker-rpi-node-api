@@ -14,7 +14,6 @@ services:
       - '8080:8080'
     volumes:
       - ./app:/app
-      - /app/node_modules # ホストマウントなしでdata volume化
     # 起動時のカレントフォルダを指定
     working_dir: /app
     # 起動後に実行するコマンドを指定
